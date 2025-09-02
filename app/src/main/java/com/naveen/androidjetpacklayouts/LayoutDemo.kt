@@ -20,6 +20,8 @@ import com.naveen.androidjetpacklayouts.screens.ColumnLayoutScreen
 import com.naveen.androidjetpacklayouts.screens.HomeScreen
 import com.naveen.androidjetpacklayouts.screens.LazyColumnScreen
 import com.naveen.androidjetpacklayouts.screens.RowLayoutScreen
+import com.naveen.androidjetpacklayouts.screens.TestThreeLazyColumnScreen
+import com.naveen.androidjetpacklayouts.screens.TestTwoLazyColumnScreen
 import com.naveen.androidjetpacklayouts.screens.viewModel.LayoutViewModel
 import com.naveen.androidjetpacklayouts.ui.theme.AndroidJetpackLayoutsTheme
 
@@ -62,7 +64,7 @@ private fun LayoutDemoApp(viewModel: LayoutViewModel = viewModel()) {
             composable(DemoRoute.Row.name) { RowLayoutScreen() }
             composable(DemoRoute.Box.name) { BoxLayoutSixScreen() }
 
-            composable(DemoRoute.LazyColumn.name) { LazyColumnScreen() }
+            composable(DemoRoute.LazyColumn.name) { TestThreeLazyColumnScreen() }
             composable(DemoRoute.LazyRow.name) { RowLayoutScreen() }
 
             composable(DemoRoute.LazyVerticalGrid.name) { BoxLayoutSixScreen() }

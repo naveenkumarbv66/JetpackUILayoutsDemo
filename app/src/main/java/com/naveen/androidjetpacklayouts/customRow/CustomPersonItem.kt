@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.sp
 import com.naveen.androidjetpacklayouts.model.Person
 
 @Composable
-fun CustomPersonItem(person: Person){
+fun CustomPersonItem(person: Person, index: String = ""){
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -26,7 +26,7 @@ fun CustomPersonItem(person: Person){
         horizontalArrangement = Arrangement.spacedBy(18.dp)
 
     ) {
-        Text(text = "ID: ".plus(person.id.toString()), color = Color.White)
+        Text(text = "ID: ".plus(if (index == "") person.id.toString() else index), color = Color.White)
         Column(
             modifier = Modifier
                 .fillMaxWidth()
