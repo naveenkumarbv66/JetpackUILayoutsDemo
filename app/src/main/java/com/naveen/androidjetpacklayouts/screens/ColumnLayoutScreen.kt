@@ -4,7 +4,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -62,8 +65,38 @@ fun TestTwoColumnScreen() {
     }
 }
 
+@Composable
+fun TestThreeColumnScreen() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceEvenly
+    ) {
+        Surface(
+           modifier = Modifier
+               .height(50.dp)
+               .width(100.dp),
+           color = Color.Blue
+       ) { }
+
+        Surface(
+            modifier = Modifier
+                .height(50.dp)
+                .width(100.dp),
+            color = Color.Blue
+        ) { }
+
+        Surface(
+            modifier = Modifier
+                .height(50.dp)
+                .width(100.dp),
+            color = Color.Blue
+        ) { }
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 private fun ColumnLayoutScreenPreview() {
-    TestTwoColumnScreen()
+    TestThreeColumnScreen()
 }
