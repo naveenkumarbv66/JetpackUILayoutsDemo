@@ -16,6 +16,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.naveen.androidjetpacklayouts.navigations.DemoRoute
 import com.naveen.androidjetpacklayouts.screens.BoxLayoutScreen
+import com.naveen.androidjetpacklayouts.screens.BoxLayoutSixScreen
 import com.naveen.androidjetpacklayouts.screens.ColumnLayoutScreen
 import com.naveen.androidjetpacklayouts.screens.HomeScreen
 import com.naveen.androidjetpacklayouts.screens.RowLayoutScreen
@@ -54,7 +55,7 @@ private fun LayoutDemoApp(viewModel: LayoutViewModel = viewModel()) {
             }
             composable(DemoRoute.Column.name) { ColumnLayoutScreen() }
             composable(DemoRoute.Row.name) { RowLayoutScreen() }
-            composable(DemoRoute.Box.name) { BoxLayoutScreen() }
+            composable(DemoRoute.Box.name) { BoxLayoutSixScreen() }
         }
     }
 }
