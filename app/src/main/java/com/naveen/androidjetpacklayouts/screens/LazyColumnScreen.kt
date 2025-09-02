@@ -77,9 +77,62 @@ fun TestThreeLazyColumnScreen() {
         contentPadding = PaddingValues(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-
-        itemsIndexed(items = personsData){ index, person ->
+        itemsIndexed(items = personsData)
+        { index, person ->
             CustomPersonItem(person, index.toString())
+        }
+    }
+}
+
+@Composable
+fun TestFourLazyColumnScreen() {
+    val personRepository = PersonRepository()
+    val personsData = personRepository.getPersons()
+
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.LightGray),
+        contentPadding = PaddingValues(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        itemsIndexed(
+            items = personsData,
+            key = { index, person -> person.id }
+        ){ index, person ->
+            CustomPersonItem(person, index.toString())
+        }
+    }
+}
+
+@Composable
+fun TestFiveLazyColumnScreen() {
+    val personRepository = PersonRepository()
+
+    val personsData = personRepository.getPersons()
+    val sections = personRepository.getSections()
+
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.LightGray),
+        contentPadding = PaddingValues(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        sections.forEach { section ->
+            stickyHeader {
+                Text(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Blue)
+                        .padding(8.dp),
+                    color = Color.White,
+                    text = "Section: $section"
+                )
+            }
+            items(items = personsData) { person ->
+                CustomPersonItem(person)
+            }
         }
     }
 }
@@ -87,5 +140,5 @@ fun TestThreeLazyColumnScreen() {
 @Preview(showBackground = true)
 @Composable
 fun LazyColumnScreenPreview(){
-    TestThreeLazyColumnScreen()
+    TestFiveLazyColumnScreen()
 }

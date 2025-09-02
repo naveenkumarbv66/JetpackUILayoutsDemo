@@ -4,6 +4,10 @@ import com.naveen.androidjetpacklayouts.model.Person
 
 class PersonRepository {
 
+    fun getSections(): List<String>{
+        return listOf("A","B","C","D","E","F","G","H")
+    }
+
     fun getPersons(): List<Person>{
         return listOf(
             Person("Naveen","KumarNaveem", 20,21),
