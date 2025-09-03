@@ -3,8 +3,10 @@ package com.naveen.androidjetpacklayouts.customRow
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,7 +28,9 @@ fun CustomPersonItem(person: Person, index: String = ""){
         horizontalArrangement = Arrangement.spacedBy(18.dp)
 
     ) {
-        Text(text = "ID: ".plus(if (index == "") person.id.toString() else index), color = Color.White)
+        Text(text = "ID: ".plus(if (index == "") person.id.toString() else index),
+            color = Color.White,
+            modifier = Modifier.padding(start = 8.dp))
         Column(
             modifier = Modifier
                 .fillMaxWidth()

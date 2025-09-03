@@ -19,9 +19,12 @@ import com.naveen.androidjetpacklayouts.screens.BoxLayoutSixScreen
 import com.naveen.androidjetpacklayouts.screens.ColumnLayoutScreen
 import com.naveen.androidjetpacklayouts.screens.HomeScreen
 import com.naveen.androidjetpacklayouts.screens.LazyColumnScreen
+import com.naveen.androidjetpacklayouts.screens.LazyRowScreen
 import com.naveen.androidjetpacklayouts.screens.RowLayoutScreen
 import com.naveen.androidjetpacklayouts.screens.TestFiveLazyColumnScreen
+import com.naveen.androidjetpacklayouts.screens.TestFiveLazyRowScreen
 import com.naveen.androidjetpacklayouts.screens.TestSixLazyColumnScreen
+import com.naveen.androidjetpacklayouts.screens.TestSixLazyRowScreen
 import com.naveen.androidjetpacklayouts.screens.TestThreeLazyColumnScreen
 import com.naveen.androidjetpacklayouts.screens.TestTwoLazyColumnScreen
 import com.naveen.androidjetpacklayouts.screens.viewModel.LayoutViewModel
@@ -67,7 +70,7 @@ private fun LayoutDemoApp(viewModel: LayoutViewModel = viewModel()) {
             composable(DemoRoute.Box.name) { BoxLayoutSixScreen() }
 
             composable(DemoRoute.LazyColumn.name) { TestSixLazyColumnScreen() }
-            composable(DemoRoute.LazyRow.name) { RowLayoutScreen() }
+            composable(DemoRoute.LazyRow.name) { TestSixLazyRowScreen() }
 
             composable(DemoRoute.LazyVerticalGrid.name) { BoxLayoutSixScreen() }
             composable(DemoRoute.LazyHorizontalGrid.name) { ColumnLayoutScreen() }
