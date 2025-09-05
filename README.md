@@ -1,4 +1,4 @@
-# AndroidJetpackLayouts
+# Android Jetpack Layouts
 
 A Jetpack Compose app demonstrating core layout primitives (Column, Row, Box) using MVVM and Navigation Compose. The main screen provides a short description and a button that opens a dedicated demo activity hosting a NavHost.
 
